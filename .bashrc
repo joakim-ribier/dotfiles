@@ -30,8 +30,8 @@ gitprompt='$(__git_ps1 "(%s)")'
 # @see `man bash`#prompting for more options
 #export PS1="\[$txtcyn\][\A] \u:\[$txtgre\]\W\[$txtgre\]$gitprompt\[$txtwht\] \$ \[$fgcolor\]"
 
-ps1_date=`date '+%H:%M:%S %d/%m'`
-export PS1="  \u \[$txtcyn\][$ps1_date]\[$txtgre\] \[$fgcolor\]  \[$txtgre\]\w\[$txtylw\]$gitprompt\[$txtwht\] \$ \[$fgcolor\]"
+triangle=$'\uE0B0'
+export PS1="  \u \[$txtcyn\][\t]\[$fgcolor\]\[$txtgre\]   \w\[$txtwht\] $triangle\[$txtylw\]$gitprompt\[$txtwht\] \$ \[$fgcolor\]"
 
 ##########################
 
