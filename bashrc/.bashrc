@@ -43,7 +43,7 @@ export PS1="  \u \[$txtcyn\][\t]\[$fgcolor\]\[$txtgre\]   \w\[$txtwht\] $t
 
 ##########################
 
-## sbt
+alias sbt='sbt -mem 3072'
 
-alias sbt='sbt -mem 2048'
+## ENV ##
 
