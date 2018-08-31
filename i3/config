@@ -269,7 +269,9 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+#bindsym $mod+9 exec --no-startup-id blurlock
+# convert -scale 1920x1080 source-image.jpg lockscreen.png
+bindsym $mod+9 exec --no-startup-id i3lock -i ~/Images/Papiers\ peints/lockscreen.png
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -425,9 +427,9 @@ bindsym $mod+Shift+d exec --no-startup-id "xrandr --output VIRTUAL1 --off --outp
 
 set $ws1 "1:1 - "
 set $ws2 "2:2 - "
-set $ws3 "3:3 - "
+set $ws3 "3:3 - "
 set $ws4 "4:4 - "
-set $ws5 "5:5 - "
+set $ws5 "5:5 - "
 set $ws6 "6:6 - "
 set $ws7 "7:7 - "
 set $ws8 "8:8 - "
