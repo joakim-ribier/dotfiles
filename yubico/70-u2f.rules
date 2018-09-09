@@ -1,0 +1,4 @@
+ACTION!="add|change", GOTO="u2f_end"
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="*", 
+ATTRS{idProduct}=="*", TAG+="uaccess"
+LABEL="u2f_end"
