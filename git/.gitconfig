@@ -1,0 +1,5 @@
+[user]
+	email = {@email}
+	name = Joakim Ribier
+[alias]
+	lg = log --pretty=oneline --abbrev-commit -n10
