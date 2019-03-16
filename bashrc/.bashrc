@@ -12,9 +12,12 @@
 
 #######################################################
   
-source $HOME/git-prompt.sh
-source $HOME/git-completion.sh
- 
+#source $HOME/git-prompt.sh
+#source $HOME/git-completion.sh
+
+# Ubuntu 18.04.2 LTS - sudo apt-get install git-core bash-completion
+source /usr/share/bash-completion/completions/git
+
 export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_HIDE_IF_PWD_IGNORED=1
