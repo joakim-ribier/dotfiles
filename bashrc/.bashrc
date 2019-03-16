@@ -43,7 +43,16 @@ export PS1="  \u \[$txtcyn\][\t]\[$fgcolor\]\[$txtgre\]   \w\[$txtwht\] $t
 
 ##########################
 
+## system
+alias j_bootclean='dpkg -l | grep -Ei "linux-headers|linux-image"'
+
+## dev
 alias sbt='sbt -mem 3072'
+# sudo apt install qgit
+alias j_ggui='qgit'
+
+## <?>
+# @see https://github.com/joakim-ribier/gttp
+alias j_gttp='~/go/src/github.com/joakim-ribier/gttp/gttp ~/go/src/github.com/joakim-ribier/gttp/data.json'
 
 ## ENV ##
-
