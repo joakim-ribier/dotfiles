@@ -34,6 +34,15 @@ _`--overwrite`: fix packages conflicts if needed_
 yaourt -S extra/gnome-terminal
 ```
 
+* Keychain
+
+```
+$ yaourt -S keychain
+
+$ vim ~/.bashrc
+eval `keychain --eval --agents ssh id_rsa`
+```
+
 #### Dev
 
 * Intellij

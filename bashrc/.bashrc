@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# https://wiki.archlinux.org/index.php/SSH_keys#Keychain
+eval `keychain --eval --agents ssh id_rsa`
+
 #######################################################
 
  ###   #  ###        ###   ###    ##   #   #  ###   ###
@@ -51,6 +54,8 @@ alias j_bootclean='dpkg -l | grep -Ei "linux-headers|linux-image"'
 
 ## dev
 alias sbt='sbt -mem 3072'
+alias sbtrelease='sbt -mem 3072 "release with-defaults"'
+
 # sudo apt install qgit
 alias j_ggui='qgit'
 
