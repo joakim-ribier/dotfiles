@@ -19,15 +19,15 @@ There are two "package manager" system on [archlinux](https://www.archlinux.org/
 
 [wiki - pacman](https://wiki.archlinux.fr/pacman)
 
-To update all packages: `$ pacman -Syu --overwrite`
+To update all packages: `$ pacman -Syu --overwrite='*'`
 
-_`--overwrite`: fix packages conflicts if needed_
+_`--overwrite='*'`: fix packages conflicts if needed_
 
 * yaourt
 
 [wiki - yaourt](https://wiki.archlinux.fr/yaourt)
 
-### System
+#### System
 
 * Gnome terminal
 ```
@@ -54,6 +54,14 @@ $ yaourt -S intellij-idea-community-edition
 * Visual Studio Code (from `aur` repo)
 ```
 $ yaourt -S code
+```
+
+#### Communication
+
+* Slack
+
+```
+$ yaourt -S slack-desktop
 ```
 
 ### Internet
