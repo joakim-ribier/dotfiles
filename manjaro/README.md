@@ -34,7 +34,7 @@ Commands list:
     * _`--overwrite='*'`_ // Fix packages conflicts
     * _`--ignore pacman`_ // Ignore package "pacman" (for example) if _`--overwrite='*'`_ does not working
 
-    :warning: For _aur_ packages you have to go through directly the Pamac (UI package manager).  
+    :warning: For all _aur_ packages you have to go through directly the Pamac (UI package manager).  
 
 * Search package
 
@@ -58,65 +58,127 @@ Commands list:
 #### System
 
 * Gnome terminal
-```
-$ pacman -S extra/gnome-terminal
-```
 
-* Keychain
+    ```
+    $ pacman -S extra/gnome-terminal
+    ```
 
-```
-$ pacman -S keychain
+* Java
 
-$ vim ~/.bashrc
-eval `keychain --eval --agents ssh id_rsa`
-```
+    https://wiki.archlinux.fr/java
 
-* Nautilus (folder management)
-```
-$ pacman -S extra/nautilus
-```
+    ```
+    // install jdk version
+    $ pacman -S jre8-openjdk
+
+    // display the available versions
+    $ archlinux-java status
+    Available Java environments:
+    java-11-openjdk
+    java-8-openjdk (default)
+
+    // set version
+    $ archlinux-java set java-8-openjdk
+    ```
+
+* Keychain - A front-end to ssh-agent, allowing one long-running ssh-agent process per system, rather than per login
+
+    ```
+    $ pacman -S keychain
+
+    $ vim ~/.bashrc
+    eval `keychain --eval --agents ssh id_rsa`
+    ```
+
+* Nautilus - Gnome folder management
+
+    ```
+    $ pacman -S extra/nautilus
+    ```
 
 * NTP - Network Time Protocol
 
-```
-$ pacman -S ntp
-$ sudo timedatectl set-ntp true
-```
+    ```
+    $ pacman -S ntp
+    $ sudo timedatectl set-ntp true
+    ```
+
+* PIP - The PyPA recommended tool for installing Python packages
+
+    ```
+    $ pacman -S extra/python2-pip
+    ```
 
 * Screen - Full-screen window manager that multiplexes a physical terminal
-```
-$ pacman -S screen
-```
+
+    ```
+    $ pacman -S screen
+    ```
 
 #### Dev
 
-* Intellij
+* Code - The Open Source build of Visual Studio Code (vscode) editor
 
-```
-$ pacman -S intellij-idea-community-edition
-```
+    ```
+    $ pacman -S community/code
+    ```
 
-* Visual Studio Code (from `aur` repo)
-```
-$ pacman -S code
-```
+* Docker - Utility to pack, ship and run any application as a lightweight container
+
+    ```
+    $ pacman -S community/docker
+
+    // start docker daemon immediatly
+    $ systemctl start docker
+
+    // enable on boot
+    $ systemctl enable docker
+    ```
+
+    Troubleshooting:
+
+    * docker: Got permission denied while trying...
+
+        ```
+        $ sudo chmod  666 /var/run/docker.sock
+        ```
+
+* Intellij - IDE for Java, Groovy and other programming languages with advanced refactoring features
+
+    ```
+    $ pacman -S intellij-idea-community-edition
+    ```
+
+* JQ - Command-line JSON processor
+
+    ```
+    $ pacman -S community/jq
+    ```
+
+* SBT - The interactive build tool
+
+    ```
+    $ pacman -S sbt
+    ```
 
 #### Communication
 
-* Slack
+* Slack Desktop (Beta) for Linux
 
-```
-$ pacman -S slack-desktop
-```
+    ```
+    $ pacman -S slack-desktop
+    ```
 
 ### Internet
 
 * Chrome (from `aur` repo)
-```
-$ pacman -S google-chrome
-```
+
+    ```
+    $ pacman -S google-chrome
+    ```
 
 * OpenVPN (from `aur` repo)
-```
-$ pacman -S openvpn
-```
+
+    ```
+    $ pacman -S openvpn
+    ```
