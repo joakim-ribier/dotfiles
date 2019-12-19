@@ -57,6 +57,12 @@ Commands list:
 
 #### System
 
+* Flameshot - Powerful yet simple to use screenshot software
+
+    ```
+    $ pacman -S community/flameshot
+    ```
+
 * Gnome terminal
 
     ```
@@ -96,14 +102,14 @@ Commands list:
     $ pacman -S extra/nautilus
     ```
 
-* NTP - Network Time Protocol
+* ntp - Network Time Protocol
 
     ```
     $ pacman -S ntp
     $ sudo timedatectl set-ntp true
     ```
 
-* PIP - The PyPA recommended tool for installing Python packages
+* pip - The PyPA recommended tool for installing Python packages
 
     ```
     $ pacman -S extra/python2-pip
@@ -143,22 +149,46 @@ Commands list:
         $ sudo chmod  666 /var/run/docker.sock
         ```
 
+* Go - Google Language
+
+    ```
+    $ pacman -S go
+    ```
+
 * Intellij - IDE for Java, Groovy and other programming languages with advanced refactoring features
 
     ```
     $ pacman -S intellij-idea-community-edition
     ```
 
-* JQ - Command-line JSON processor
+* jq - Command-line JSON processor
 
     ```
     $ pacman -S community/jq
     ```
 
-* SBT - The interactive build tool
+* pgcli (`aur` repos) - A command line interface for Postgres with auto-completion and syntax highlighting 
+
+    ```
+    $ pacman -S pgcli
+    ```
+
+* qgit - A GIT GUI viewer built on Qt/C++
+
+    ```
+    $ pacman -S community/qgit
+    ```
+
+* sbt - The interactive build tool
 
     ```
     $ pacman -S sbt
+    ```
+
+* scala - A Java-interoperable language with object-oriented and functional features
+
+    ```
+    $ pacman -S scala
     ```
 
 #### Communication
@@ -182,3 +212,11 @@ Commands list:
     ```
     $ pacman -S openvpn
     ```
+
+### Tool
+
+```
+$ pacman -S bind-tools (dig: Lookup Utility...)
+
+$ pacman -S net-tools (ifconfig...)
+```
