@@ -5,11 +5,41 @@
 ## TOC
 
 * [I3](#i3)
+* [Kernel](#kernel)
 * [Package](#packages)
 
 ## I3
 
 [README](/i3/README.md)
+
+## Kernel
+
+* Kernel name
+
+```
+$ uname -r
+5.4.64-1-MANJARO
+```
+
+* List available
+
+```
+$ mhwd-kernel -l
+available kernels:
+ * linux414
+ * linux419
+ * linux44
+ * linux49
+ * linux54
+ * linux57
+ ...
+```
+
+* Upgrade
+
+```
+sudo mwhd-kernel -i linux57 && sudo reboot
+```
 
 ## Packages
 
