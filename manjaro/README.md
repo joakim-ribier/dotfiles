@@ -7,6 +7,7 @@
 * [I3](#i3)
 * [Kernel](#kernel)
 * [Package](#packages)
+* [CMD](#cmd)
 
 ## I3
 
@@ -197,10 +198,10 @@ Commands list:
     $ pacman -S community/jq
     ```
 
-* pgcli (`aur` repos) - A command line interface for Postgres with auto-completion and syntax highlighting 
+* pgcli (from `pip`) - A command line interface for Postgres with auto-completion and syntax highlighting 
 
     ```
-    $ pacman -S pgcli
+    $ pip install pgcli
     ```
 
 * qgit - A GIT GUI viewer built on Qt/C++
@@ -250,3 +251,16 @@ $ pacman -S bind-tools (dig: Lookup Utility...)
 
 $ pacman -S net-tools (ifconfig...)
 ```
+
+## CMD
+
+### Network
+
+* How to get your wifi #pwd
+```
+$ cat /etc/NetworkManager/system-connections/WIFI_NETWORK_NAME | grep psk=
+
+> psk=MY_PWD
+```
+
+
