@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -127,11 +127,11 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
-#bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-#bindsym $mod+minus scratchpad show
+bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -188,13 +188,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="Calamares"] floating enable border normal
+for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
@@ -210,7 +210,6 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
-for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
@@ -269,9 +268,7 @@ mode "resize" {
 }
 
 # Lock screen
-#bindsym $mod+9 exec --no-startup-id blurlock
-# convert -scale 1920x1080 source-image.jpg lockscreen.png
-bindsym $mod+9 exec --no-startup-id i3lock -i ~/Images/Papiers\ peints/lockscreen.png
+bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -336,14 +333,14 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #283339
+        background #222D31
         statusline #F9FAF9
         separator  #454947
 
 #                      border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
         active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #283339 #EEE8D5
+        inactive_workspace #595B5B #222D31 #EEE8D5
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
@@ -367,8 +364,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 16
-gaps outer 0
+gaps inner 14
+gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -376,7 +373,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
@@ -419,26 +416,22 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+m exec --no-startup-id "xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off"
+# TABMO
 
-bindsym $mod+Shift+d exec --no-startup-id "xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP2 --off"
+bindsym $mod+Shift+m exec --no-startup-id "xrandr --output VIRTUAL-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-2 --off --output HDMI-1 --off --output DP-2 --off --output DP-1-2 --off --output DP-1-1 --off"
+bindsym $mod+Shift+d exec --no-startup-id "xrandr --output VIRTUAL-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --mode 1920x1080 --pos 2113x0 --rotate normal --output DP-2 --off --output DP-1-2 --off"
 
-# Set Workspaces
+bindsym $mod+Shift+t exec --no-startup-id "xrandr --output eDP-1 --primary --mode 1920x1080 --pos 4870x0 --rotate normal --output DP-1 --off --output DP-1-2 --off --output DP-1-1 --mode 1920x1200 --pos 0x0 --rotate normal --output DP-1-3 --off --output DP-2 --off --output HDMI-1 --off --output HDMI-2 --mode 2560x1440 --pos 2132x0 --rotate normal --output VIRTUAL-1 --off"
 
-set $ws1 "1:1 - "
-set $ws2 "2:2 - "
-set $ws3 "3:3 - "
-set $ws4 "4:4 - "
-set $ws5 "5:5 - "
-set $ws6 "6:6 - "
-set $ws7 "7:7 - "
-set $ws8 "8:8 - "
-
-workspace $ws1 output eDP1
-workspace $ws2 output eDP1
-workspace $ws3 output eDP1
-workspace $ws4 output eDP1
-workspace $ws5 output HDMI1
-workspace $ws6 output HDMI1
-workspace $ws7 output HDMI1
-workspace $ws8 output HDMI1
+#workspace $ws1 output eDP-1
+#workspace $ws2 output eDP-1
+#workspace $ws3 output eDP-1
+#workspace $ws4 output eDP-1
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output HDMI-2
+workspace $ws4 output HDMI-2
+workspace $ws5 output DP-1-1
+#workspace $ws6 output eDP-1
+workspace $ws7 output DP-1-1
+workspace $ws8 output DP-1-1

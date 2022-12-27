@@ -1,6 +1,6 @@
 # Manjaro Linux
 
-### 18.0.4 Illyria - I3
+### 22.0.0 Sikaris - I3
 
 ## TOC
 
