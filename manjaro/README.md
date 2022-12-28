@@ -46,203 +46,209 @@ sudo mwhd-kernel -i linux57 && sudo reboot
 
 [Pacman](https://wiki.archlinux.fr/pacman) is the main package manager system on [archlinux](https://www.archlinux.org/).
 
-Commands list:
+```
+# Update all package
 
-* Update all package
+$ pacman -Sy
+```
 
-    ```
-    $ pacman -Sy
-    ```
+```
+# Update and install all packages
 
-* Update and install all packages
+$ pacman -Syu
+```
 
-    ```
-    $ pacman -Syu
-    ```
+Options: 
 
-    Options: 
+* _`--overwrite='*'`_ // Fix packages conflicts
+* _`--ignore pacman`_ // Ignore package "pacman" (for example) if _`--overwrite='*'`_ does not working
 
-    * _`--overwrite='*'`_ // Fix packages conflicts
-    * _`--ignore pacman`_ // Ignore package "pacman" (for example) if _`--overwrite='*'`_ does not working
 
-    :warning: For all _aur_ packages you have to go through directly the Pamac (UI package manager).  
+```
+# Search package
 
-* Search package
+$ pacman -Ss nautilus
 
-    ```
-    $ pacman -Ss nautilus
+extra/libnautilus-extension 3.34.1-1 [installé]
+Library for extending the Default file manager for GNOME
+extra/nautilus 3.34.1-1 (gnome) [installé]
+Default file manager for GNOME
+extra/nautilus-legacy 3.26.4-2
+...
+```
 
-    extra/libnautilus-extension 3.34.1-1 [installé]
-    Library for extending the Default file manager for GNOME
-    extra/nautilus 3.34.1-1 (gnome) [installé]
-    Default file manager for GNOME
-    extra/nautilus-legacy 3.26.4-2
-    ...
-    ```
+```
+# Install package
 
-* Install package
-
-    ```
-    $ pacman -S extra/nautilus
-    ```
+$ sudo pacman -S nautilus
+```
 
 #### System
 
+* Audio
+
+```
+$ sudo pacman -S pulseaudio
+
+$ sudo pacman -S pavucontrol (ui manager)
+  ```
+
 * Flameshot - Powerful yet simple to use screenshot software
 
-    ```
-    $ pacman -S community/flameshot
-    ```
+```
+$ sudo pacman -S flameshot
+```
 
 * Gnome terminal
 
-    ```
-    $ pacman -S extra/gnome-terminal
-    ```
+```
+$ sudo pacman -S gnome-terminal
+```
 
 * Java
 
-    https://wiki.archlinux.fr/java
+https://wiki.archlinux.fr/java
 
-    ```
-    // install jdk version
-    $ pacman -S jre8-openjdk
+```
+// install jdk version
+$ pacman -S jre8-openjdk
 
-    // display the available versions
-    $ archlinux-java status
-    Available Java environments:
-    java-11-openjdk
-    java-8-openjdk (default)
+// display the available versions
+$ archlinux-java status
+Available Java environments:
+java-11-openjdk
+java-8-openjdk (default)
 
-    // set version
-    $ archlinux-java set java-8-openjdk
-    ```
+// set version
+$ archlinux-java set java-8-openjdk
+```
 
 * Keychain - A front-end to ssh-agent, allowing one long-running ssh-agent process per system, rather than per login
 
-    ```
-    $ pacman -S keychain
+```
+$ sudo pacman -S keychain
 
-    $ vim ~/.bashrc
-    eval `keychain --eval --agents ssh id_rsa`
-    ```
+$ vim ~/.bashrc
+eval `keychain --eval --agents ssh id_rsa`
+```
 
 * Nautilus - Gnome folder management
 
-    ```
-    $ pacman -S extra/nautilus
-    ```
+```
+$ sudo pacman -S nautilus
+```
 
 * ntp - Network Time Protocol
 
-    ```
-    $ pacman -S ntp
-    $ sudo timedatectl set-ntp true
-    ```
+```
+$ pacman -S ntp
+$ sudo timedatectl set-ntp true
+```
 
 * pip - The PyPA recommended tool for installing Python packages
 
-    ```
-    $ pacman -S extra/python2-pip
-    ```
+```
+$sudo  pacman -S python-pip (python 3)
+```
 
 * Screen - Full-screen window manager that multiplexes a physical terminal
 
-    ```
-    $ pacman -S screen
-    ```
+```
+$ sudo pacman -S screen
+```
 
 #### Dev
 
 * Code - The Open Source build of Visual Studio Code (vscode) editor
 
-    ```
-    $ pacman -S community/code
-    ```
+```
+$ sudo pacman -S code
+```
 
 * Docker - Utility to pack, ship and run any application as a lightweight container
 
-    ```
-    $ pacman -S community/docker
+```
+$ sudo pacman -S docker
+$ sudo pacman -S docker-compose
 
-    // start docker daemon immediatly
-    $ systemctl start docker
+// start docker daemon immediatly
+$ systemctl start docker
 
-    // enable on boot
-    $ systemctl enable docker
-    ```
+// enable on boot
+$ systemctl enable docker
+```
 
-    Troubleshooting:
+Troubleshooting:
 
-    * docker: Got permission denied while trying...
+```
+# docker: Got permission denied while trying...
 
-        ```
-        $ sudo chmod  666 /var/run/docker.sock
-        ```
+$ sudo chmod 666 /var/run/docker.sock
+```
 
 * Go - Google Language
 
-    ```
-    $ pacman -S go
-    ```
+```
+$ sudo pacman -S go
+```
 
 * Intellij - IDE for Java, Groovy and other programming languages with advanced refactoring features
 
-    ```
-    $ pacman -S intellij-idea-community-edition
-    ```
+```
+$ sudo pacman -S intellij-idea-community-edition
+```
 
 * jq - Command-line JSON processor
 
-    ```
-    $ pacman -S community/jq
-    ```
+```
+$ sudo pacman -S jq
+```
 
 * pgcli (from `pip`) - A command line interface for Postgres with auto-completion and syntax highlighting 
 
-    ```
-    $ pip install pgcli
-    ```
+```
+$ pip install -U pgcli
+```
 
 * qgit - A GIT GUI viewer built on Qt/C++
 
-    ```
-    $ pacman -S community/qgit
-    ```
+```
+$ sudo pacman -S qgit
+```
 
 * sbt - The interactive build tool
 
-    ```
-    $ pacman -S sbt
-    ```
+```
+$ sudo pacman -S sbt
+```
 
 * scala - A Java-interoperable language with object-oriented and functional features
 
-    ```
-    $ pacman -S scala
-    ```
+```
+$ pacman -S scala
+```
 
 #### Communication
 
 * Slack Desktop (Beta) for Linux
 
-    ```
-    $ pacman -S slack-desktop
-    ```
+```
+$ sudo pacman -S slack-desktop
+```
 
 ### Internet
 
-* Chrome (from `aur` repo)
+* Chrome
 
-    ```
-    $ pacman -S google-chrome
-    ```
+```
+$ yay -S google-chrome
+```
 
-* OpenVPN (from `aur` repo)
+* Wireguard (vpn)
 
-    ```
-    $ pacman -S openvpn
-    ```
+```
+$ sudo pacman -S wireguard-dkms
+```
 
 ### Tool
 
@@ -254,6 +260,19 @@ $ pacman -S net-tools (ifconfig...)
 
 ## CMD
 
+### Audio
+
+* Remove bip system
+
+https://wiki.archlinux.org/title/PC_speaker
+
+```
+# Blacklisting the pcspkr module will prevent udev from loading it at boot. Create the file:
+
+$ sudo vim /etc/modprobe.d/nobeep.conf
+blacklist pcspkr
+```
+
 ### Network
 
 * How to get your wifi #pwd
@@ -262,5 +281,3 @@ $ cat /etc/NetworkManager/system-connections/WIFI_NETWORK_NAME | grep psk=
 
 > psk=MY_PWD
 ```
-
-
