@@ -1,0 +1,25 @@
+# → set the right git user info
+$ git config user.email joakim.ribier@gmail.com
+
+$ git config user.name && git config user.email
+Joakim Ribier
+joakim.ribier@gmail.com
+
+# → display the signing keys list
+$ gpg --list-secret-keys --keyid-format=long
+/Users/joakim.ribier/.gnupg/pubring.kbx
+---------------------------------------
+sec   rsa4096/{KEY} 2023-12-13 [SC] [expire : 2027-12-13]
+      {LONG_KEY}
+uid                [  ultime ] Github <joakim.ribier@gmail.com>
+...
+
+# → set the right signing key
+$ git config user.signingkey {KEY}
+
+# → check the signing key configured on the current repo
+$ git config user.signingkey
+{KEY}
+
+# display the public key block
+$ gpg --armor --export {LONG_KEY}

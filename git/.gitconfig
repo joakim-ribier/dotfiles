@@ -1,5 +1,19 @@
 [user]
-	email = {@email}
+	email = joakim.ribier@gmail.com
 	name = Joakim Ribier
 [alias]
 	lg = log --pretty=oneline --abbrev-commit -n10
+
+[user]
+        email = joakim.ribier@gmail.com
+        name = Joakim Ribier
+        signingkey = {ID}
+[alias]
+        lg   = log --pretty=oneline --abbrev-commit --shortstat -n25
+        c    = checkout
+        ri   = rebase -i
+        st   = status
+        aadd = add -A
+        del  = branch -D
+[commit]
+        gpgsign = true
